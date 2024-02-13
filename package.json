@@ -6,7 +6,7 @@
   },
   "displayName": "C# Extensions",
   "name": "com.ltmx.cs.extensions",
-  "repository": "github:ltmx/cs.extensions",
+  "repository": "github:ltmx/Unity.CSharp.Extensions",
   "description": "Extension methods for my packages",
   "version": "1.0.0",
   "keywords": [
