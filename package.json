@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "LTMX",
+    "email": "nicolasreinhard.pro@gmail.com",
+    "url": "https://linktr.ee/nicolasreinhard"
+  },
+  "displayName": "C# Extensions",
+  "name": "com.ltmx.cs.extensions",
+  "repository": "github:ltmx/cs.extensions",
+  "description": "Extension methods for my packages",
+  "version": "1.0.0",
+  "keywords": [
+    "unity",
+    "extension",
+    "extensions",
+    "ltmx",
+    "helper",
+    "utils"
+  ],
+  "license": "MIT"
+}
