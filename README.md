@@ -1,5 +1,5 @@
 # Unity.CSharp.Extensions
-Extension Method Library For Unity
+Extension Method Library For Unity (LINQ Syntax)
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/ltmx/Unity.CSharp.Extensions?color=blueviolet&style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/ltmx/Unity.CSharp.Extensions?style=for-the-badge)
