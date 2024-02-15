@@ -12,8 +12,7 @@ using System.Collections.Generic;
 public static class IEnumerableExtensions
 {
     public static void ForEach<T>(this IEnumerable<T> array, Action<T> action) {
-        foreach (var item in array) {
+        foreach (var item in array)
             action(item);  
-        }
     }
 }
