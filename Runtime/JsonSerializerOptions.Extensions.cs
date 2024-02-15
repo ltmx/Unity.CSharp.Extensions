@@ -6,14 +6,16 @@
 
 #endregion
 
-using System.Text.Json;
-using System.Text.Json.Serialization;
+// Todo : Fix dependencies or move to external package
 
-public static class JsonSerializerOptionsExtensions
-{
-    public static JsonSerializerOptions AddConverter<T>(this JsonSerializerOptions options) where T : JsonConverter, new()
-    {
-        options.Converters.Add(new T());
-        return options;
-    }
-}
+// using System.Text.Json;
+// using System.Text.Json.Serialization;
+//
+// public static class JsonSerializerOptionsExtensions
+// {
+//     public static JsonSerializerOptions AddConverter<T>(this JsonSerializerOptions options) where T : JsonConverter, new()
+//     {
+//         options.Converters.Add(new T());
+//         return options;
+//     }
+// }
