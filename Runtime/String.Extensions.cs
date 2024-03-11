@@ -24,10 +24,16 @@ public static class StringExtensions
     
     public static bool IsNullOrEmpty(this string s) => string.IsNullOrEmpty(s);
     
+    
     public static string Clean(this string text)
     {
-        text = Regex.Replace(text, @"^\s*$\n|\r", string.Empty, RegexOptions.Multiline).TrimEnd();
-        return text;
+        return Regex.Replace(text, @"(\r\n?|\n)\s*(?=\r\n?|\n)", "\n").TrimExtremities();
     }
+    
+    public static string TrimExtremities(this string text)
+    {
+        return text.TrimStart().TrimEnd();
+    }
+    
     
 }
