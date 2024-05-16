@@ -51,4 +51,11 @@ public static class ConditionExtensions {
     
     public static void flip(this ref bool condition) => condition = !condition;
     
+    public static void IfNullOrEmpty(this string condition, Action action) {
+        if (string.IsNullOrEmpty(condition)) action?.Invoke();
+    }
+    public static void IfNotNullOrEmpty(this string condition, Action action) {
+        if (!string.IsNullOrEmpty(condition)) action?.Invoke();
+    }
+    
 }
