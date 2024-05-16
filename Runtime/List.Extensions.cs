@@ -13,4 +13,7 @@ public static class ListExtensions
     public static void AddTo<T>(this T item, List<T> list) => list.Add(item);
 
     public static void AddTo<T>(this IEnumerable<T> item, List<T> list) => list.AddRange(item);
+
+    public static List<string> ToList(this string item) => new() { item };
+    
 }
