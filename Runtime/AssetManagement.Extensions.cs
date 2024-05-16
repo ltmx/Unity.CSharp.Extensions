@@ -5,11 +5,13 @@
 #endregion
 
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 using Object = UnityEngine.Object;
 
 public static class AssetManagementExtensions
@@ -61,18 +63,34 @@ public static class AssetManagementExtensions
     private static string GetFormattedDate() => DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day + "-" + DateTime.Now.Hour;
 
     /// Saves a byte array to a file at the desired path
-    public static void SaveToFile(this byte[] bytes, string path, string fileName, string extension, bool ping = true)
+    public async static void SaveToFile(this byte[] bytes, string path, string fileName, string extension, bool ping = true)
     {
         path.CreateDirectoryIfVoid();
         
+        #if !UNITY_EDITOR
+        path.OpenInExplorer();
+        #endif
+        
         fileName.IsNullOrEmpty().IfTrue(() => fileName = bytes.CreateUniqueFileName());
         path = Path.Combine(path, fileName) + extension;
-        File.WriteAllBytes(path, bytes);
+        await File.WriteAllBytesAsync(path, bytes);
         #if UNITY_EDITOR
             AssetDatabase.Refresh();
             Debug.Log($"Saved script to {path}");
             path.PingPath(ping);
         #endif
+    }
+    
+    public static void OpenInExplorer(this string path)
+    {
+        if (Directory.Exists(path) == false)
+            return;
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = path,
+            UseShellExecute = true,
+            Verb = "open"
+        });
     }
     
     /// Saves a string to a file at the desired path
