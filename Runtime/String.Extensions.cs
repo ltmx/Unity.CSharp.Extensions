@@ -4,36 +4,40 @@
 // **    Repository : https://github.com/LTMX/Unity.Athena
 #endregion
 
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 public static class StringExtensions
 {
+    /// <summary> Adds a line to the string </summary>
     public static string AddLine(this string stringBuilder, string line) {
         if (stringBuilder.Length <= 0) return stringBuilder.Add(line);
         stringBuilder.Add('\n');
         return stringBuilder.Add(line);
     }
 
+    /// <summary> Adds a string to the string </summary>
     public static string Add(this string s, string characters) {
         s += characters;
         return s;
     }
-    public static string Add(this string s, char characters) {
-        return s + characters;
-    }
     
+    /// <summary> Adds a character to the string </summary>
+    public static string Add(this string s, char characters) => s + characters;
+    
+    /// <summary> Removes the specified characters from the string </summary>
+    public static string Remove(this string s, string characters) => s.Replace(characters, "");
+
+    /// <summary> Returns true if the string is null or empty </summary>
     public static bool IsNullOrEmpty(this string s) => string.IsNullOrEmpty(s);
-    
-    
-    public static string Clean(this string text)
-    {
-        return Regex.Replace(text, @"(\r\n?|\n)\s*(?=\r\n?|\n)", "\n").TrimExtremities();
-    }
-    
-    public static string TrimExtremities(this string text)
-    {
-        return text.TrimStart().TrimEnd();
-    }
-    
+
+    /// <summary> Returns true if the string contains the value </summary>
+    public static bool Lacks(this string s, string value) => s.Contains(value) == false;
+
+    /// <summary> Returns true if the string contains the value </summary>
+    public static string Clean(this string text) => Regex.Replace(text, @"(\r\n?|\n)\s*(?=\r\n?|\n)", "\n").TrimExtremities();
+
+    /// <summary> Returns true if the string contains the value </summary>
+    public static string TrimExtremities(this string text) => text.TrimStart().TrimEnd();
     
 }
