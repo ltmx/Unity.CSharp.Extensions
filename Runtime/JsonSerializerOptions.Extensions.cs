@@ -1,12 +1,8 @@
 ﻿#region Header
-
-// **    Copyright (C) 2023 Nicolas Reinhard, @LTMX. All rights reserved.
-// **    Github Profile: https://github.com/LTMX
-// **    Repository : https://github.com/LTMX/Unity.Athena
-
+// **    Copyright (C) 2024 Nicolas Reinhard, @ltmx. All rights reserved.
+// **    Github Profile: https://github.com/ltmx
+// **    Repository : https://github.com/ltmx/Unity.Athena
 #endregion
-
-// Todo : Fix dependencies or move to external package
 
 // using System.Text.Json;
 // using System.Text.Json.Serialization;

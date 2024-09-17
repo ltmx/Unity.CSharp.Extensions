@@ -1,9 +1,7 @@
 ﻿#region Header
-
-// **    Copyright (C) 2023 Nicolas Reinhard, @LTMX. All rights reserved.
-// **    Github Profile: https://github.com/LTMX
-// **    Repository : https://github.com/LTMX/Unity.Athena
-
+// **    Copyright (C) 2024 Nicolas Reinhard, @ltmx. All rights reserved.
+// **    Github Profile: https://github.com/ltmx
+// **    Repository : https://github.com/ltmx/Unity.Athena
 #endregion
 
 using System.IO;
@@ -14,10 +12,11 @@ public static class PathExtensions
 {
     /// <summary> Removes the asset name (asset.extension) from the path </summary>
     public static string RemoveAssetNameFromPath(this string path, Object asset) => path.Replace("/" + asset.name + ".asset", "");
-
+    
+    
     /// <summary> Removes the "Assets" folder from the path, useful to access </summary>
-    public static string RemoveAssetFolderFromPath(this string path, Object asset) => path.Replace("Assets", "");
-
+    public static string RemoveAssetFolderFromPath(this string path) => path.Replace("Assets", "");
+    
     /// <inheritdoc cref="Path.Combine(string, string)" />
     public static string Combine(this string path, string other) => Path.Combine(path, other);
 

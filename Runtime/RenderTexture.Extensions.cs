@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿#region Header
+// **    Copyright (C) 2024 Nicolas Reinhard, @ltmx. All rights reserved.
+// **    Github Profile: https://github.com/ltmx
+// **    Repository : https://github.com/ltmx/Unity.Athena
+#endregion
+
+using UnityEngine;
 
 public static class RenderTextureExtensions
 {

@@ -1,10 +1,9 @@
 ﻿#region Header
-// **    Copyright (C) 2023 Nicolas Reinhard, @LTMX. All rights reserved.
-// **    Github Profile: https://github.com/LTMX
-// **    Repository : https://github.com/LTMX/Unity.Athena
+// **    Copyright (C) 2024 Nicolas Reinhard, @ltmx. All rights reserved.
+// **    Github Profile: https://github.com/ltmx
+// **    Repository : https://github.com/ltmx/Unity.Athena
 #endregion
 
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 public static class StringExtensions
@@ -21,7 +20,7 @@ public static class StringExtensions
         s += characters;
         return s;
     }
-    
+
     /// <summary> Adds a character to the string </summary>
     public static string Add(this string s, char characters) => s + characters;
     

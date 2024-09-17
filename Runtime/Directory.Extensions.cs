@@ -1,7 +1,7 @@
 ﻿#region Header
-// **    Copyright (C) 2023 Nicolas Reinhard, @LTMX. All rights reserved.
-// **    Github Profile: https://github.com/LTMX
-// **    Repository : https://github.com/LTMX/Unity.Athena
+// **    Copyright (C) 2024 Nicolas Reinhard, @ltmx. All rights reserved.
+// **    Github Profile: https://github.com/ltmx
+// **    Repository : https://github.com/ltmx/Unity.Athena
 #endregion
 
 using System.IO;
@@ -9,5 +9,12 @@ using System.IO;
 public static class DirectoryExtensions
 {
     /// <summary> Creates a directory if it doesn't exist. </summary>
-    public static void CreateDirectoryIfVoid(this string path) => Directory.Exists(path).IfFalse(() => Directory.CreateDirectory(path));
+    public static void CreateDirectoryIfVoid(this string path) => path.DirectoryExists()?.CreateDirectory();
+
+    /// Returns the directory path if it exists, otherwise returns null.
+    /// Used for null checking
+    public static string DirectoryExists(this string path) => Directory.Exists(path) ? path : null;
+
+    /// <inheritdoc cref="Directory.CreateDirectory(string)" />
+    public static DirectoryInfo CreateDirectory(this string path) => Directory.CreateDirectory(path);
 }
