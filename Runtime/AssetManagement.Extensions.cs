@@ -81,7 +81,7 @@ public static class AssetManagementExtensions
 		path.CreateDirectoryIfVoid();
 
 #if !UNITY_EDITOR
-        path.OpenInExplorer();
+        path.OpenPathInExplorer();
 #endif
 
 		fileName.IsNullOrEmpty().IfTrue(() => fileName = bytes.CreateUniqueFileName());
@@ -89,12 +89,12 @@ public static class AssetManagementExtensions
 		await File.WriteAllBytesAsync(path, bytes);
 #if UNITY_EDITOR
 		AssetDatabase.Refresh();
-		Debug.Log($"Saved script to {path}");
+		Debug.Log($"Saved to {path}");
 		path.PingPath(ping);
 #endif
 	}
 
-	public static void OpenInExplorer(this string path)
+	public static void OpenPathInExplorer(this string path)
 	{
 		if (Directory.Exists(path) == false)
 			return;
