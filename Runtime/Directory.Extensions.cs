@@ -9,7 +9,13 @@ using System.IO;
 public static class DirectoryExtensions
 {
     /// <summary> Creates a directory if it doesn't exist. </summary>
-    public static void CreateDirectoryIfVoid(this string path) => path.DirectoryExists()?.CreateDirectory();
+    public static void CreateDirectoryIfVoid(this string path)
+    {
+        if (path.DirectoryExists() == null)
+        {
+            path.CreateDirectory();
+        }
+    }
 
     /// Returns the directory path if it exists, otherwise returns null.
     /// Used for null checking
